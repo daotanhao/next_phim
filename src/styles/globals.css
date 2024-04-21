@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
+    --background: #121212;
     --foreground: 0 0% 98%;
 
     --card: 0 0% 3.9%;
@@ -73,4 +73,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.app {
+  @apply relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-6 sm:px-16;
 }

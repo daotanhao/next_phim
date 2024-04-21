@@ -2,10 +2,13 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import AppProvider from "@/providers/AppProvider"
 import { ThemeProvider } from "@/providers/ThemeProvider"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+
+import AuthLayout from "./(auth)/layout"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@_rdev7",
+    creator: "daotanhao",
   },
   icons: {
     icon: "/favicon.ico",
@@ -73,14 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           inter.className
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   )
