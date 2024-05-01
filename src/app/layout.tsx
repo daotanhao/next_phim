@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import AuthLayout from "./(auth)/layout"
+import NavBar from "@/components/NavBar"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -76,7 +77,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           inter.className
         )}
       >
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <NavBar />
+          {children}
+        </AppProvider>
       </body>
     </html>
   )

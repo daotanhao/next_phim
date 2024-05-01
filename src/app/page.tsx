@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ThemeSwitcher } from "@/components/NavBar/ThemeSwitcher"
 
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/lib/components/icons"
@@ -12,7 +13,6 @@ import {
   CarouselPrevious,
 } from "@/lib/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import { ThemeSwitcher } from "@/components/ThemeSwitcher"
 
 export default function Home() {
   return (
