@@ -1,8 +1,9 @@
 import Link from "next/link"
+import { ButtonLoading } from "@/components/ButtonLoading"
 import { ThemeSwitcher } from "@/components/NavBar/ThemeSwitcher"
+import { PasswordInput } from "@/components/PasswordInput"
 
 import { siteConfig } from "@/config/site"
-import { Icons } from "@/lib/components/icons"
 import { buttonVariants } from "@/lib/components/ui/button"
 import { Card, CardContent } from "@/lib/components/ui/card"
 import {
@@ -18,7 +19,6 @@ export default function Home() {
   return (
     <main className="flex h-screen items-center justify-center">
       <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-        <Icons.logo className="h-16 w-16" />
         <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl">
           {siteConfig.name}
         </h1>
@@ -57,6 +57,8 @@ export default function Home() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+        <ButtonLoading loading={true}>Loading</ButtonLoading>
+        <PasswordInput />
       </div>
     </main>
   )

@@ -1,34 +1,14 @@
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react"
+import { LuLogOut, LuUser2 } from "react-icons/lu"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/lib/components/ui/avatar"
-import { Button } from "@/lib/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/lib/components/ui/dropdown-menu"
 
@@ -45,8 +25,8 @@ export function UserBlock(props: UserBlockProps) {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="flex flex-row items-center ">
-          <Avatar>
-            <AvatarImage style={{ height: 40, width: 40, marginRight: 12 }} src={image} />
+          <Avatar style={{ height: 28, width: 28, marginRight: 8 }}>
+            <AvatarImage src={image} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium">{name}</span>
@@ -56,29 +36,14 @@ export function UserBlock(props: UserBlockProps) {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              <User className="mr-2 h-4 w-4" />
+              <LuUser2 className="mr-2 h-4 w-4" />
               <span>Profile</span>
               <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <CreditCard className="mr-2 h-4 w-4" />
-              <span>Billing</span>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Keyboard className="mr-2 h-4 w-4" />
-              <span>Keyboard shortcuts</span>
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={props.signOut}>
-            <LogOut className="mr-2 h-4 w-4" />
+            <LuLogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>

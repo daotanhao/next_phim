@@ -12,15 +12,10 @@ export const metadata: Metadata = {
   description: "Web xem phim online, phim lậu hay, phim mới nhất",
 }
 
-export default function AuthLayout({
+export default function ProtectedLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
-  return (
-    <main className="app">
-      <NavBar />
-      {children}
-    </main>
-  )
+}) {
+  return <main className="app">{children}</main>
 }

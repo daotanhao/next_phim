@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react"
-import { isBrowser, noop } from "@/misc/util"
+import { isBrowser, noop } from "@/misc/utils"
 
 type parserOptions<T> =
   | {
